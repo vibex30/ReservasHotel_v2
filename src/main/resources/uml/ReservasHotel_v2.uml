@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:Codegen="http://www.eclipse.org/papyrus/Codegen/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
   <uml:Model xmi:id="_PzqZgJ_rEe6HLv0QYiv_ng" name="ReservasHotel_v1">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_P0CM8J_rEe6HLv0QYiv_ng">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -930,8 +930,6 @@
                 </packagedElement>
                 <packagedElement xmi:type="uml:Package" xmi:id="_sulh0KAZEe6HLv0QYiv_ng" name="negocio">
                   <packagedElement xmi:type="uml:Class" xmi:id="_sunXAKAZEe6HLv0QYiv_ng" name="Huespedes" visibility="public">
-                    <ownedAttribute xmi:type="uml:Property" xmi:id="_sun-EaAZEe6HLv0QYiv_ng" name="capacidad" visibility="private" type="_sun-EKAZEe6HLv0QYiv_ng" isUnique="false"/>
-                    <ownedAttribute xmi:type="uml:Property" xmi:id="_sun-EqAZEe6HLv0QYiv_ng" name="tamano" visibility="private" type="_sun-EKAZEe6HLv0QYiv_ng" isUnique="false"/>
                     <ownedAttribute xmi:type="uml:Property" xmi:id="_suqaUKAZEe6HLv0QYiv_ng" name="coleccionHuespedes" visibility="private" type="_FhS0AJ_6Ee6HLv0QYiv_ng" isUnique="false">
                       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_suqaUaAZEe6HLv0QYiv_ng"/>
                       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_surBYKAZEe6HLv0QYiv_ng" value="*"/>
@@ -972,7 +970,7 @@
     return tamano;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_su0yYKAZEe6HLv0QYiv_ng" name="getCapacidad" specification="_su0LUKAZEe6HLv0QYiv_ng">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_su0yYKAZEe6HLv0QYiv_ng" name="getCapacidad">
                       <language>JAVA</language>
                       <body>&#xD;
     return capacidad;&#xD;
@@ -996,7 +994,7 @@
     }&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_su8HIaAZEe6HLv0QYiv_ng" name="buscarIndice" specification="_su65AKAZEe6HLv0QYiv_ng">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_su8HIaAZEe6HLv0QYiv_ng" name="buscarIndice">
                       <language>JAVA</language>
                       <body>&#xD;
     int indice = 0;&#xD;
@@ -1013,13 +1011,13 @@
     return indice;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_su98UKAZEe6HLv0QYiv_ng" name="tamanoSuperado" specification="_su9VQKAZEe6HLv0QYiv_ng">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_su98UKAZEe6HLv0QYiv_ng" name="tamanoSuperado">
                       <language>JAVA</language>
                       <body>&#xD;
     return indice >= tamano;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_svAYkKAZEe6HLv0QYiv_ng" name="capacidadSuperada" specification="_su_xgKAZEe6HLv0QYiv_ng">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_svAYkKAZEe6HLv0QYiv_ng" name="capacidadSuperada">
                       <language>JAVA</language>
                       <body>&#xD;
     return indice >= capacidad;&#xD;
@@ -1053,7 +1051,7 @@
     }&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_svF4IKAZEe6HLv0QYiv_ng" name="desplazarUnaPosicionHaciaIzquierda" specification="_svFREKAZEe6HLv0QYiv_ng">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_svF4IKAZEe6HLv0QYiv_ng" name="desplazarUnaPosicionHaciaIzquierda">
                       <language>JAVA</language>
                       <body>&#xD;
     int i;&#xD;
@@ -1064,9 +1062,7 @@
     tamano--;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_surocKAZEe6HLv0QYiv_ng" name="Huespedes" visibility="public" method="_suvS0KAZEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_suurwKAZEe6HLv0QYiv_ng" name="capacidad" type="_sun-EKAZEe6HLv0QYiv_ng"/>
-                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_surocKAZEe6HLv0QYiv_ng" name="Huespedes" visibility="public" method="_suvS0KAZEe6HLv0QYiv_ng"/>
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_suv54KAZEe6HLv0QYiv_ng" name="get" visibility="public" method="_suxIAKAZEe6HLv0QYiv_ng">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_suwg8KAZEe6HLv0QYiv_ng" type="_FhS0AJ_6Ee6HLv0QYiv_ng" direction="return">
                         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_suwg8aAZEe6HLv0QYiv_ng"/>
@@ -1082,23 +1078,8 @@
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_suy9MKAZEe6HLv0QYiv_ng" name="getTamano" visibility="public" method="_suzkQaAZEe6HLv0QYiv_ng">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_suzkQKAZEe6HLv0QYiv_ng" type="_sun-EKAZEe6HLv0QYiv_ng" direction="return"/>
                     </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_su0LUKAZEe6HLv0QYiv_ng" name="getCapacidad" visibility="public" method="_su0yYKAZEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_su0LUaAZEe6HLv0QYiv_ng" type="_sun-EKAZEe6HLv0QYiv_ng" direction="return"/>
-                    </ownedOperation>
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_su1ZcKAZEe6HLv0QYiv_ng" name="insertar" visibility="public" method="_su6R8KAZEe6HLv0QYiv_ng" raisedException="_su2nkqAZEe6HLv0QYiv_ng">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_su2AgKAZEe6HLv0QYiv_ng" name="huesped" type="_FhS0AJ_6Ee6HLv0QYiv_ng"/>
-                    </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_su65AKAZEe6HLv0QYiv_ng" name="buscarIndice" visibility="private" method="_su8HIaAZEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_su65AaAZEe6HLv0QYiv_ng" type="_sun-EKAZEe6HLv0QYiv_ng" direction="return"/>
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_su8HIKAZEe6HLv0QYiv_ng" name="huesped" type="_FhS0AJ_6Ee6HLv0QYiv_ng"/>
-                    </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_su9VQKAZEe6HLv0QYiv_ng" name="tamanoSuperado" visibility="private" method="_su98UKAZEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_su9VQaAZEe6HLv0QYiv_ng" type="_Yt3UYJ_rEe6HLv0QYiv_ng" direction="return"/>
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_su9VQqAZEe6HLv0QYiv_ng" name="indice" type="_sun-EKAZEe6HLv0QYiv_ng"/>
-                    </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_su_xgKAZEe6HLv0QYiv_ng" name="capacidadSuperada" visibility="private" method="_svAYkKAZEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_su_xgaAZEe6HLv0QYiv_ng" type="_Yt3UYJ_rEe6HLv0QYiv_ng" direction="return"/>
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_su_xgqAZEe6HLv0QYiv_ng" name="indice" type="_sun-EKAZEe6HLv0QYiv_ng"/>
                     </ownedOperation>
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_svA_oKAZEe6HLv0QYiv_ng" name="buscar" visibility="public" method="_svCNwaAZEe6HLv0QYiv_ng">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_svBmsKAZEe6HLv0QYiv_ng" type="_FhS0AJ_6Ee6HLv0QYiv_ng" direction="return"/>
@@ -1107,13 +1088,8 @@
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_svDb4KAZEe6HLv0QYiv_ng" name="borrar" visibility="public" method="_svEqAKAZEe6HLv0QYiv_ng" raisedException="_su2nkqAZEe6HLv0QYiv_ng">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_svEC8KAZEe6HLv0QYiv_ng" name="huesped" type="_FhS0AJ_6Ee6HLv0QYiv_ng"/>
                     </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_svFREKAZEe6HLv0QYiv_ng" name="desplazarUnaPosicionHaciaIzquierda" visibility="private" method="_svF4IKAZEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_svFREaAZEe6HLv0QYiv_ng" name="indice" type="_sun-EKAZEe6HLv0QYiv_ng"/>
-                    </ownedOperation>
                   </packagedElement>
                   <packagedElement xmi:type="uml:Class" xmi:id="_ByyUYKAaEe6HLv0QYiv_ng" name="Habitaciones" visibility="public">
-                    <ownedAttribute xmi:type="uml:Property" xmi:id="_Byy7cKAaEe6HLv0QYiv_ng" name="capacidad" visibility="private" type="_9dOpYKAZEe6HLv0QYiv_ng" isUnique="false"/>
-                    <ownedAttribute xmi:type="uml:Property" xmi:id="_ByzigKAaEe6HLv0QYiv_ng" name="tamano" visibility="private" type="_9dOpYKAZEe6HLv0QYiv_ng" isUnique="false"/>
                     <ownedAttribute xmi:type="uml:Property" xmi:id="_By0JkKAaEe6HLv0QYiv_ng" name="coleccionHabitaciones" visibility="private" type="_eXp0IJ_7Ee6HLv0QYiv_ng" isUnique="false">
                       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_By0woKAaEe6HLv0QYiv_ng"/>
                       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_By0woaAaEe6HLv0QYiv_ng" value="*"/>
@@ -1168,13 +1144,13 @@
     return copiaHabitaciones;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzF2YaAaEe6HLv0QYiv_ng" name="getTamano" specification="_BzFPUKAaEe6HLv0QYiv_ng">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzF2YaAaEe6HLv0QYiv_ng" name="getTamano">
                       <language>JAVA</language>
                       <body>&#xD;
     return tamano;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzHEgqAaEe6HLv0QYiv_ng" name="getCapacidad" specification="_BzHEgKAaEe6HLv0QYiv_ng">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzHEgqAaEe6HLv0QYiv_ng" name="getCapacidad">
                       <language>JAVA</language>
                       <body>&#xD;
     return capacidad;&#xD;
@@ -1198,7 +1174,7 @@
     }&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzKu4aAaEe6HLv0QYiv_ng" name="buscarIndice" specification="_BzKH0KAaEe6HLv0QYiv_ng">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzKu4aAaEe6HLv0QYiv_ng" name="buscarIndice">
                       <language>JAVA</language>
                       <body>&#xD;
     int indice = 0;&#xD;
@@ -1215,13 +1191,13 @@
     return indice;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzL9AKAaEe6HLv0QYiv_ng" name="tamanoSuperado" specification="_BzLV8KAaEe6HLv0QYiv_ng">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzL9AKAaEe6HLv0QYiv_ng" name="tamanoSuperado">
                       <language>JAVA</language>
                       <body>&#xD;
     return indice >= tamano;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzMkEaAaEe6HLv0QYiv_ng" name="capacidadSuperada" specification="_BzL9AaAaEe6HLv0QYiv_ng">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzMkEaAaEe6HLv0QYiv_ng" name="capacidadSuperada">
                       <language>JAVA</language>
                       <body>&#xD;
     return indice >= capacidad;&#xD;
@@ -1255,7 +1231,7 @@
     }&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzT40aAaEe6HLv0QYiv_ng" name="desplazarUnaPosicionHaciaIzquierda" specification="_BzTRwaAaEe6HLv0QYiv_ng">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_BzT40aAaEe6HLv0QYiv_ng" name="desplazarUnaPosicionHaciaIzquierda">
                       <language>JAVA</language>
                       <body>&#xD;
     int i;&#xD;
@@ -1266,9 +1242,7 @@
     tamano--;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_By1-wKAaEe6HLv0QYiv_ng" name="Habitaciones" visibility="public" method="_By8scaAaEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_By8scKAaEe6HLv0QYiv_ng" name="capacidad" type="_9dOpYKAZEe6HLv0QYiv_ng"/>
-                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_By1-wKAaEe6HLv0QYiv_ng" name="Habitaciones" visibility="public" method="_By8scaAaEe6HLv0QYiv_ng"/>
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_By9TgKAaEe6HLv0QYiv_ng" name="get" visibility="public" method="_By-hoKAaEe6HLv0QYiv_ng">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_By96kKAaEe6HLv0QYiv_ng" type="_eXp0IJ_7Ee6HLv0QYiv_ng" direction="return">
                         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_By96kaAaEe6HLv0QYiv_ng"/>
@@ -1288,26 +1262,8 @@
                         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BzDaIqAaEe6HLv0QYiv_ng" value="*"/>
                       </ownedParameter>
                     </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_BzFPUKAaEe6HLv0QYiv_ng" name="getTamano" visibility="public" method="_BzF2YaAaEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzF2YKAaEe6HLv0QYiv_ng" type="_9dOpYKAZEe6HLv0QYiv_ng" direction="return"/>
-                    </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_BzHEgKAaEe6HLv0QYiv_ng" name="getCapacidad" visibility="public" method="_BzHEgqAaEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzHEgaAaEe6HLv0QYiv_ng" type="_9dOpYKAZEe6HLv0QYiv_ng" direction="return"/>
-                    </ownedOperation>
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_BzHrkKAaEe6HLv0QYiv_ng" name="insertar" visibility="public" method="_BzI5sKAaEe6HLv0QYiv_ng" raisedException="_su2nkqAZEe6HLv0QYiv_ng">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzISoKAaEe6HLv0QYiv_ng" name="habitacion" type="_eXp0IJ_7Ee6HLv0QYiv_ng"/>
-                    </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_BzKH0KAaEe6HLv0QYiv_ng" name="buscarIndice" visibility="private" method="_BzKu4aAaEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzKH0aAaEe6HLv0QYiv_ng" type="_9dOpYKAZEe6HLv0QYiv_ng" direction="return"/>
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzKu4KAaEe6HLv0QYiv_ng" name="habitacion" type="_eXp0IJ_7Ee6HLv0QYiv_ng"/>
-                    </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_BzLV8KAaEe6HLv0QYiv_ng" name="tamanoSuperado" visibility="private" method="_BzL9AKAaEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzLV8aAaEe6HLv0QYiv_ng" type="_Yt3UYJ_rEe6HLv0QYiv_ng" direction="return"/>
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzLV8qAaEe6HLv0QYiv_ng" name="indice" type="_9dOpYKAZEe6HLv0QYiv_ng"/>
-                    </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_BzL9AaAaEe6HLv0QYiv_ng" name="capacidadSuperada" visibility="private" method="_BzMkEaAaEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzL9AqAaEe6HLv0QYiv_ng" type="_Yt3UYJ_rEe6HLv0QYiv_ng" direction="return"/>
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzMkEKAaEe6HLv0QYiv_ng" name="indice" type="_9dOpYKAZEe6HLv0QYiv_ng"/>
                     </ownedOperation>
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_BzNyMKAaEe6HLv0QYiv_ng" name="buscar" visibility="public" method="_BzQ1gaAaEe6HLv0QYiv_ng">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzQOcKAaEe6HLv0QYiv_ng" type="_eXp0IJ_7Ee6HLv0QYiv_ng" direction="return"/>
@@ -1316,13 +1272,11 @@
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_BzRckKAaEe6HLv0QYiv_ng" name="borrar" visibility="public" method="_BzTRwKAaEe6HLv0QYiv_ng" raisedException="_su2nkqAZEe6HLv0QYiv_ng">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzSqsKAaEe6HLv0QYiv_ng" name="habitacion" type="_eXp0IJ_7Ee6HLv0QYiv_ng"/>
                     </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_BzTRwaAaEe6HLv0QYiv_ng" name="desplazarUnaPosicionHaciaIzquierda" visibility="private" method="_BzT40aAaEe6HLv0QYiv_ng">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BzT40KAaEe6HLv0QYiv_ng" name="indice" type="_9dOpYKAZEe6HLv0QYiv_ng"/>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_2dLvoLGUEe61-OC-KJosvg" name="getTamano">
+                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_CFB8gLGVEe61-OC-KJosvg" type="_eXs3cZ_7Ee6HLv0QYiv_ng" direction="return"/>
                     </ownedOperation>
                   </packagedElement>
                   <packagedElement xmi:type="uml:Class" xmi:id="_SOOJMK1ZEe6tTZMC2RIPBQ" name="Reservas" visibility="public">
-                    <ownedAttribute xmi:type="uml:Property" xmi:id="_SPGS8K1ZEe6tTZMC2RIPBQ" name="capacidad" visibility="private" type="_SPFE0K1ZEe6tTZMC2RIPBQ" isUnique="false"/>
-                    <ownedAttribute xmi:type="uml:Property" xmi:id="_SPIIIK1ZEe6tTZMC2RIPBQ" name="tamano" visibility="private" type="_SPFE0K1ZEe6tTZMC2RIPBQ" isUnique="false"/>
                     <ownedAttribute xmi:type="uml:Property" xmi:id="_fWzTkK1aEe6tTZMC2RIPBQ" name="-coleccionReservas" type="_FDytwJ_8Ee6HLv0QYiv_ng" aggregation="composite" association="_fWwQQK1aEe6tTZMC2RIPBQ">
                       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fWz6oK1aEe6tTZMC2RIPBQ"/>
                       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fWz6oa1aEe6tTZMC2RIPBQ" value="*"/>
@@ -1359,7 +1313,7 @@
     return tamano;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_SP_DwK1ZEe6tTZMC2RIPBQ" name="getCapacidad" specification="_SP91oK1ZEe6tTZMC2RIPBQ">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_SP_DwK1ZEe6tTZMC2RIPBQ" name="getCapacidad">
                       <language>JAVA</language>
                       <body>&#xD;
     return capacidad;&#xD;
@@ -1383,7 +1337,7 @@
     }&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_SQFxcK1ZEe6tTZMC2RIPBQ" name="buscarIndice" specification="_SQD8QK1ZEe6tTZMC2RIPBQ">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_SQFxcK1ZEe6tTZMC2RIPBQ" name="buscarIndice">
                       <language>JAVA</language>
                       <body>&#xD;
     int indice = 0;&#xD;
@@ -1400,13 +1354,13 @@
     return indice;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_SQINsK1ZEe6tTZMC2RIPBQ" name="tamanoSuperado" specification="_SQGYgK1ZEe6tTZMC2RIPBQ">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_SQINsK1ZEe6tTZMC2RIPBQ" name="tamanoSuperado">
                       <language>JAVA</language>
                       <body>&#xD;
     return indice >= tamano;&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_SQKp8K1ZEe6tTZMC2RIPBQ" name="capacidadSuperada" specification="_SQI0wK1ZEe6tTZMC2RIPBQ">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_SQKp8K1ZEe6tTZMC2RIPBQ" name="capacidadSuperada">
                       <language>JAVA</language>
                       <body>&#xD;
     return indice >= capacidad;&#xD;
@@ -1440,7 +1394,7 @@
     }&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_SQUa8K1ZEe6tTZMC2RIPBQ" name="desplazarUnaPosicionHaciaIzquierda" specification="_SQTM0K1ZEe6tTZMC2RIPBQ">
+                    <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_SQUa8K1ZEe6tTZMC2RIPBQ" name="desplazarUnaPosicionHaciaIzquierda">
                       <language>JAVA</language>
                       <body>&#xD;
     int i;&#xD;
@@ -1527,9 +1481,7 @@
         throw new IllegalArgumentException(&quot;ERROR: La reserva indicada para realizar checkout no ha sido localizada.&quot;);&#xD;
 </body>
                     </ownedBehavior>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_SPMZkK1ZEe6tTZMC2RIPBQ" name="Reservas" visibility="public" method="_SP0rsK1ZEe6tTZMC2RIPBQ">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SPt-AK1ZEe6tTZMC2RIPBQ" name="capacidad" type="_SPFE0K1ZEe6tTZMC2RIPBQ"/>
-                    </ownedOperation>
+                    <ownedOperation xmi:type="uml:Operation" xmi:id="_SPMZkK1ZEe6tTZMC2RIPBQ" name="Reservas" visibility="public" method="_SP0rsK1ZEe6tTZMC2RIPBQ"/>
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_SP3H8K1ZEe6tTZMC2RIPBQ" name="get" visibility="public" method="_SP49Ia1ZEe6tTZMC2RIPBQ">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_SP3vAK1ZEe6tTZMC2RIPBQ" type="_FDytwJ_8Ee6HLv0QYiv_ng" direction="return">
                         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SP3vAa1ZEe6tTZMC2RIPBQ"/>
@@ -1545,23 +1497,8 @@
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_SP8ngK1ZEe6tTZMC2RIPBQ" name="getTamano" visibility="public" method="_SP9Oka1ZEe6tTZMC2RIPBQ">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_SP9OkK1ZEe6tTZMC2RIPBQ" type="_SPFE0K1ZEe6tTZMC2RIPBQ" direction="return"/>
                     </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_SP91oK1ZEe6tTZMC2RIPBQ" name="getCapacidad" visibility="public" method="_SP_DwK1ZEe6tTZMC2RIPBQ">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SP-csK1ZEe6tTZMC2RIPBQ" type="_SPFE0K1ZEe6tTZMC2RIPBQ" direction="return"/>
-                    </ownedOperation>
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_SP_q0K1ZEe6tTZMC2RIPBQ" name="insertar" visibility="public" method="_SQCHEK1ZEe6tTZMC2RIPBQ" raisedException="_su2nkqAZEe6HLv0QYiv_ng">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQA48K1ZEe6tTZMC2RIPBQ" name="reserva" type="_FDytwJ_8Ee6HLv0QYiv_ng"/>
-                    </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_SQD8QK1ZEe6tTZMC2RIPBQ" name="buscarIndice" visibility="private" method="_SQFxcK1ZEe6tTZMC2RIPBQ">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQD8Qa1ZEe6tTZMC2RIPBQ" type="_SPFE0K1ZEe6tTZMC2RIPBQ" direction="return"/>
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQFKYK1ZEe6tTZMC2RIPBQ" name="reserva" type="_FDytwJ_8Ee6HLv0QYiv_ng"/>
-                    </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_SQGYgK1ZEe6tTZMC2RIPBQ" name="tamanoSuperado" visibility="private" method="_SQINsK1ZEe6tTZMC2RIPBQ">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQG_kK1ZEe6tTZMC2RIPBQ" type="_Yt3UYJ_rEe6HLv0QYiv_ng" direction="return"/>
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQHmoK1ZEe6tTZMC2RIPBQ" name="indice" type="_SPFE0K1ZEe6tTZMC2RIPBQ"/>
-                    </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_SQI0wK1ZEe6tTZMC2RIPBQ" name="capacidadSuperada" visibility="private" method="_SQKp8K1ZEe6tTZMC2RIPBQ">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQJb0K1ZEe6tTZMC2RIPBQ" type="_Yt3UYJ_rEe6HLv0QYiv_ng" direction="return"/>
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQKC4K1ZEe6tTZMC2RIPBQ" name="indice" type="_SPFE0K1ZEe6tTZMC2RIPBQ"/>
                     </ownedOperation>
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_SQLRAK1ZEe6tTZMC2RIPBQ" name="buscar" visibility="public" method="_SQOUUK1ZEe6tTZMC2RIPBQ">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQMfIK1ZEe6tTZMC2RIPBQ" type="_FDytwJ_8Ee6HLv0QYiv_ng" direction="return"/>
@@ -1569,9 +1506,6 @@
                     </ownedOperation>
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_SQQwkK1ZEe6tTZMC2RIPBQ" name="borrar" visibility="public" method="_SQSlwK1ZEe6tTZMC2RIPBQ" raisedException="_su2nkqAZEe6HLv0QYiv_ng">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQRXoK1ZEe6tTZMC2RIPBQ" name="reserva" type="_FDytwJ_8Ee6HLv0QYiv_ng"/>
-                    </ownedOperation>
-                    <ownedOperation xmi:type="uml:Operation" xmi:id="_SQTM0K1ZEe6tTZMC2RIPBQ" name="desplazarUnaPosicionHaciaIzquierda" visibility="private" method="_SQUa8K1ZEe6tTZMC2RIPBQ">
-                      <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQTz4K1ZEe6tTZMC2RIPBQ" name="indice" type="_SPFE0K1ZEe6tTZMC2RIPBQ"/>
                     </ownedOperation>
                     <ownedOperation xmi:type="uml:Operation" xmi:id="_SQVpEK1ZEe6tTZMC2RIPBQ" name="getReservas" visibility="public" method="_SQZTcK1ZEe6tTZMC2RIPBQ">
                       <ownedParameter xmi:type="uml:Parameter" xmi:id="_SQWQIK1ZEe6tTZMC2RIPBQ" type="_FDytwJ_8Ee6HLv0QYiv_ng" direction="return">
@@ -1605,14 +1539,8 @@
                   </packagedElement>
                 </packagedElement>
                 <packagedElement xmi:type="uml:Class" xmi:id="_OtSHIK1bEe6tTZMC2RIPBQ" name="Modelo" visibility="public">
-                  <ownedAttribute xmi:type="uml:Property" xmi:id="_OtT8Ua1bEe6tTZMC2RIPBQ" name="CAPACIDAD" visibility="private" isLeaf="true" isStatic="true" type="_OtT8UK1bEe6tTZMC2RIPBQ" isUnique="false">
-                    <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_OtUjYK1bEe6tTZMC2RIPBQ" name="defaultValue">
-                      <language>JAVA</language>
-                      <body>50</body>
-                    </defaultValue>
-                  </ownedAttribute>
                   <ownedAttribute xmi:type="uml:Property" xmi:id="_WYDlAq1cEe6tTZMC2RIPBQ" name="-reservas" type="_SOOJMK1ZEe6tTZMC2RIPBQ" aggregation="composite" association="_WYC98K1cEe6tTZMC2RIPBQ"/>
-                  <ownedAttribute xmi:type="uml:Property" xmi:id="_YbJeIq1cEe6tTZMC2RIPBQ" name="-habitaciones" type="_ByyUYKAaEe6HLv0QYiv_ng" association="_YbIQAK1cEe6tTZMC2RIPBQ"/>
+                  <ownedAttribute xmi:type="uml:Property" xmi:id="_YbJeIq1cEe6tTZMC2RIPBQ" name="-habitaciones" type="_ByyUYKAaEe6HLv0QYiv_ng" aggregation="composite" association="_YbIQAK1cEe6tTZMC2RIPBQ"/>
                   <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_OtmQMa1bEe6tTZMC2RIPBQ" name="Modelo" specification="_Otfiga1bEe6tTZMC2RIPBQ">
                     <language>JAVA</language>
                     <body>&#xD;
@@ -1663,7 +1591,7 @@
     habitaciones.insertar(habitacion);&#xD;
 </body>
                   </ownedBehavior>
-                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Ot7AUK1bEe6tTZMC2RIPBQ" name="buscar" specification="_Ot5LIK1bEe6tTZMC2RIPBQ">
+                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Ot7AUK1bEe6tTZMC2RIPBQ" name="buscar" specification="_rYEAkLB8Ee6O0uwlVf0peQ">
                     <language>JAVA</language>
                     <body>&#xD;
     return habitaciones.buscar(habitacion);&#xD;
@@ -1757,7 +1685,7 @@
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_Ot05sK1bEe6tTZMC2RIPBQ" name="insertar" visibility="public" method="_Ot2u4K1bEe6tTZMC2RIPBQ" raisedException="_su2nkqAZEe6HLv0QYiv_ng">
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ot2H0K1bEe6tTZMC2RIPBQ" name="habitacion" type="_eXp0IJ_7Ee6HLv0QYiv_ng"/>
                   </ownedOperation>
-                  <ownedOperation xmi:type="uml:Operation" xmi:id="_Ot5LIK1bEe6tTZMC2RIPBQ" name="buscar" visibility="public" method="_Ot7AUK1bEe6tTZMC2RIPBQ">
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_Ot5LIK1bEe6tTZMC2RIPBQ" name="buscar" visibility="public">
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ot5yMK1bEe6tTZMC2RIPBQ" type="_eXp0IJ_7Ee6HLv0QYiv_ng" direction="return"/>
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ot6ZQK1bEe6tTZMC2RIPBQ" name="habitacion" type="_eXp0IJ_7Ee6HLv0QYiv_ng"/>
                   </ownedOperation>
@@ -1782,6 +1710,10 @@
                   </ownedOperation>
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_OuQXgK1bEe6tTZMC2RIPBQ" name="borrar" visibility="public" method="_OuV3EK1bEe6tTZMC2RIPBQ" raisedException="_su2nkqAZEe6HLv0QYiv_ng">
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_OuSzwK1bEe6tTZMC2RIPBQ" name="reserva" type="_FDytwJ_8Ee6HLv0QYiv_ng"/>
+                  </ownedOperation>
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_rYEAkLB8Ee6O0uwlVf0peQ" name="buscar" method="_Ot7AUK1bEe6tTZMC2RIPBQ">
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_rYEAkbB8Ee6O0uwlVf0peQ" type="_FDytwJ_8Ee6HLv0QYiv_ng" direction="return"/>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_rYEAkrB8Ee6O0uwlVf0peQ" name="reserva" type="_FDytwJ_8Ee6HLv0QYiv_ng"/>
                   </ownedOperation>
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_OuXsQK1bEe6tTZMC2RIPBQ" name="getReservas" visibility="public" method="_OuaIga1bEe6tTZMC2RIPBQ">
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_OuY6YK1bEe6tTZMC2RIPBQ" type="_FDytwJ_8Ee6HLv0QYiv_ng" direction="return">
@@ -1874,7 +1806,7 @@
     modelo.insertar(huesped);&#xD;
 </body>
                   </ownedBehavior>
-                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_LJz5AK1eEe6tTZMC2RIPBQ" name="buscar" specification="_LJw1sK1eEe6tTZMC2RIPBQ">
+                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_LJz5AK1eEe6tTZMC2RIPBQ" name="buscar" specification="_9oECoLB7Ee6O0uwlVf0peQ">
                     <language>JAVA</language>
                     <body>&#xD;
     return modelo.buscar(huesped);&#xD;
@@ -1979,7 +1911,7 @@
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_LJtLUK1eEe6tTZMC2RIPBQ" name="insertar" visibility="public" method="_LJvAgK1eEe6tTZMC2RIPBQ" raisedException="_su2nkqAZEe6HLv0QYiv_ng">
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_LJuZcK1eEe6tTZMC2RIPBQ" name="huesped" type="_FhS0AJ_6Ee6HLv0QYiv_ng"/>
                   </ownedOperation>
-                  <ownedOperation xmi:type="uml:Operation" xmi:id="_LJw1sK1eEe6tTZMC2RIPBQ" name="buscar" visibility="public" method="_LJz5AK1eEe6tTZMC2RIPBQ">
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_LJw1sK1eEe6tTZMC2RIPBQ" name="buscar" visibility="public">
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_LJyD0K1eEe6tTZMC2RIPBQ" type="_FhS0AJ_6Ee6HLv0QYiv_ng" direction="return"/>
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_LJzR8K1eEe6tTZMC2RIPBQ" name="huesped" type="_FhS0AJ_6Ee6HLv0QYiv_ng"/>
                   </ownedOperation>
@@ -2021,13 +1953,17 @@
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_LKNhoK1eEe6tTZMC2RIPBQ" name="borrar" visibility="public" method="_LKQk8K1eEe6tTZMC2RIPBQ" raisedException="_su2nkqAZEe6HLv0QYiv_ng">
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_LKOvwK1eEe6tTZMC2RIPBQ" name="reserva" type="_FDytwJ_8Ee6HLv0QYiv_ng"/>
                   </ownedOperation>
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_9oECoLB7Ee6O0uwlVf0peQ" name="buscar" concurrency="concurrent" method="_LJz5AK1eEe6tTZMC2RIPBQ">
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_9oECobB7Ee6O0uwlVf0peQ" type="_FDytwJ_8Ee6HLv0QYiv_ng" direction="return"/>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_9oECorB7Ee6O0uwlVf0peQ" name="reserva" type="_FDytwJ_8Ee6HLv0QYiv_ng"/>
+                  </ownedOperation>
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_LKRMAK1eEe6tTZMC2RIPBQ" name="getReservas" visibility="public" method="_LKSaIa1eEe6tTZMC2RIPBQ">
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_LKRzEK1eEe6tTZMC2RIPBQ" type="_FDytwJ_8Ee6HLv0QYiv_ng" direction="return">
                       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LKRzEa1eEe6tTZMC2RIPBQ"/>
                       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LKSaIK1eEe6tTZMC2RIPBQ" value="*"/>
                     </ownedParameter>
                   </ownedOperation>
-                  <ownedOperation xmi:type="uml:Operation" xmi:id="_LKToQK1eEe6tTZMC2RIPBQ" name="getReservas" visibility="public" method="_LKWEgK1eEe6tTZMC2RIPBQ">
+                  <ownedOperation xmi:type="uml:Operation" xmi:id="_LKToQK1eEe6tTZMC2RIPBQ" name="getReservas" visibility="public" concurrency="guarded" method="_LKWEgK1eEe6tTZMC2RIPBQ">
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_LKUPUK1eEe6tTZMC2RIPBQ" type="_FDytwJ_8Ee6HLv0QYiv_ng" direction="return">
                       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LKUPUa1eEe6tTZMC2RIPBQ"/>
                       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LKU2YK1eEe6tTZMC2RIPBQ" value="*"/>
@@ -2436,7 +2372,7 @@
     return numElementos;&#xD;
 </body>
                   </ownedBehavior>
-                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_6Lw7IK1rEe6tTZMC2RIPBQ" name="mostrar" specification="_6Lue4K1rEe6tTZMC2RIPBQ">
+                  <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_6Lw7IK1rEe6tTZMC2RIPBQ" name="mostrar">
                     <language>JAVA</language>
                     <body>&#xD;
     for (Reserva reserva : reservas) {&#xD;
@@ -2499,7 +2435,7 @@
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_6Kw1kK1rEe6tTZMC2RIPBQ" name="comenzar" visibility="public" method="_6KxcoK1rEe6tTZMC2RIPBQ"/>
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_6KyDsK1rEe6tTZMC2RIPBQ" name="terminar" visibility="public" method="_6KyDsa1rEe6tTZMC2RIPBQ"/>
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_6KzR0K1rEe6tTZMC2RIPBQ" name="ejecutarOpcion" visibility="private" method="_6K1HAK1rEe6tTZMC2RIPBQ">
-                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_6Kz44K1rEe6tTZMC2RIPBQ" name="opcion"/>
+                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_6Kz44K1rEe6tTZMC2RIPBQ" name="opcion" type="_eUBbYK1vEe6tTZMC2RIPBQ"/>
                   </ownedOperation>
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_6K2VIK1rEe6tTZMC2RIPBQ" name="insertarHuesped" visibility="private" method="_6K28MK1rEe6tTZMC2RIPBQ"/>
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_6K3jQK1rEe6tTZMC2RIPBQ" name="buscarHuesped" visibility="private" method="_6K3jQa1rEe6tTZMC2RIPBQ"/>
@@ -2539,12 +2475,6 @@
                     <ownedParameter xmi:type="uml:Parameter" xmi:id="_6LspsK1rEe6tTZMC2RIPBQ" name="reservas" type="_uKbo0aJKEe6lWpeIxLaWbw">
                       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6LtQwK1rEe6tTZMC2RIPBQ"/>
                       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6LtQwa1rEe6tTZMC2RIPBQ" value="*"/>
-                    </ownedParameter>
-                  </ownedOperation>
-                  <ownedOperation xmi:type="uml:Operation" xmi:id="_6Lue4K1rEe6tTZMC2RIPBQ" name="mostrar" visibility="private" method="_6Lw7IK1rEe6tTZMC2RIPBQ">
-                    <ownedParameter xmi:type="uml:Parameter" xmi:id="_6LvtAK1rEe6tTZMC2RIPBQ" name="reservas" type="_uKbo0aJKEe6lWpeIxLaWbw">
-                      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6LwUEK1rEe6tTZMC2RIPBQ"/>
-                      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6LwUEa1rEe6tTZMC2RIPBQ" value="*"/>
                     </ownedParameter>
                   </ownedOperation>
                   <ownedOperation xmi:type="uml:Operation" xmi:id="_6LxiMK1rEe6tTZMC2RIPBQ" name="realizarCheckin" visibility="private" method="_6LxiMa1rEe6tTZMC2RIPBQ"/>
@@ -3029,43 +2959,20 @@
       <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
     </profileApplication>
   </uml:Model>
-  <Codegen:External xmi:id="_Ysn-QJ_rEe6HLv0QYiv_ng" name="java.lang.String" base_Classifier="_YprX8J_rEe6HLv0QYiv_ng"/>
-  <Codegen:External xmi:id="_Ys_KoJ_rEe6HLv0QYiv_ng" name="java.time.LocalDate" base_Classifier="_Ys8HUJ_rEe6HLv0QYiv_ng"/>
-  <Codegen:External xmi:id="_YuHzEJ_rEe6HLv0QYiv_ng" name="java.lang.Object" base_Classifier="_YuFW0J_rEe6HLv0QYiv_ng"/>
   <standard:Create xmi:id="_Fhvf8J_6Ee6HLv0QYiv_ng" base_BehavioralFeature="_FhscoJ_6Ee6HLv0QYiv_ng"/>
   <standard:Create xmi:id="_FiRrcJ_6Ee6HLv0QYiv_ng" base_BehavioralFeature="_FiOoIJ_6Ee6HLv0QYiv_ng"/>
-  <Codegen:External xmi:id="_eX2BYJ_7Ee6HLv0QYiv_ng" name="org.iesalandalus.programacion.reservashotel.modelo.dominio.TipoHabitacion" base_Classifier="_C7NQoJ_8Ee6HLv0QYiv_ng"/>
   <standard:Create xmi:id="_eX-kQJ_7Ee6HLv0QYiv_ng" base_BehavioralFeature="_eX4doJ_7Ee6HLv0QYiv_ng"/>
   <standard:Create xmi:id="_eYFR8J_7Ee6HLv0QYiv_ng" base_BehavioralFeature="_eYCOoJ_7Ee6HLv0QYiv_ng"/>
   <standard:Create xmi:id="_eYLYkJ_7Ee6HLv0QYiv_ng" base_BehavioralFeature="_eYIVQJ_7Ee6HLv0QYiv_ng"/>
   <standard:Create xmi:id="_C7XosJ_8Ee6HLv0QYiv_ng" base_BehavioralFeature="_C7UlYJ_8Ee6HLv0QYiv_ng"/>
-  <Codegen:External xmi:id="_FD-T8J_8Ee6HLv0QYiv_ng" name="org.iesalandalus.programacion.reservashotel.modelo.dominio.Huesped" base_Classifier="_FhS0AJ_6Ee6HLv0QYiv_ng"/>
-  <Codegen:External xmi:id="_FEClYJ_8Ee6HLv0QYiv_ng" name="org.iesalandalus.programacion.reservashotel.modelo.dominio.Habitacion" base_Classifier="_eXp0IJ_7Ee6HLv0QYiv_ng"/>
-  <Codegen:External xmi:id="_FELIQJ_8Ee6HLv0QYiv_ng" name="java.time.LocalDateTime" base_Classifier="_FEIsAZ_8Ee6HLv0QYiv_ng"/>
   <standard:Create xmi:id="_FEUSMJ_8Ee6HLv0QYiv_ng" base_BehavioralFeature="_FER18J_8Ee6HLv0QYiv_ng"/>
   <standard:Create xmi:id="_FEc1EJ_8Ee6HLv0QYiv_ng" base_BehavioralFeature="_FEZxwZ_8Ee6HLv0QYiv_ng"/>
   <standard:Create xmi:id="_sutdoKAZEe6HLv0QYiv_ng" base_BehavioralFeature="_surocKAZEe6HLv0QYiv_ng"/>
-  <Codegen:External xmi:id="_su5D0KAZEe6HLv0QYiv_ng" name="javax.naming.OperationNotSupportedException" base_Classifier="_su2nkqAZEe6HLv0QYiv_ng"/>
-  <Codegen:External xmi:id="_9dUI8KAZEe6HLv0QYiv_ng" name="org.iesalandalus.programacion.reservashotel.modelo.dominio.Reserva" base_Classifier="_FDytwJ_8Ee6HLv0QYiv_ng"/>
   <standard:Create xmi:id="_By7eUKAaEe6HLv0QYiv_ng" base_BehavioralFeature="_By1-wKAaEe6HLv0QYiv_ng"/>
-  <Codegen:External xmi:id="_YbmiEKAfEe6HLv0QYiv_ng" name="org.iesalandalus.programacion.reservashotel.modelo.negocio.Huespedes" base_Classifier="_sunXAKAZEe6HLv0QYiv_ng"/>
-  <Codegen:External xmi:id="_YbsBoKAfEe6HLv0QYiv_ng" name="org.iesalandalus.programacion.reservashotel.modelo.negocio.Habitaciones" base_Classifier="_ByyUYKAaEe6HLv0QYiv_ng"/>
-  <Codegen:External xmi:id="_aln3UKJIEe6lWpeIxLaWbw" name="org.iesalandalus.programacion.reservashotel.modelo.Modelo" base_Classifier="_alOOsKJIEe6lWpeIxLaWbw"/>
-  <Codegen:External xmi:id="_al0EkKJIEe6lWpeIxLaWbw" name="org.iesalandalus.programacion.reservashotel.vista.Vista" base_Classifier="_alvzIKJIEe6lWpeIxLaWbw"/>
-  <Codegen:External xmi:id="_uJzWsKJKEe6lWpeIxLaWbw" name="Huesped" base_Classifier="_uJtQEKJKEe6lWpeIxLaWbw"/>
-  <Codegen:External xmi:id="_uKFDgKJKEe6lWpeIxLaWbw" name="Habitacion" base_Classifier="_uJ-V0KJKEe6lWpeIxLaWbw"/>
-  <Codegen:External xmi:id="_uKTtAKJKEe6lWpeIxLaWbw" name="TipoHabitacion" base_Classifier="_uKPbkKJKEe6lWpeIxLaWbw"/>
-  <Codegen:External xmi:id="_uKaasKJKEe6lWpeIxLaWbw" name="Regimen" base_Classifier="_uKX-cKJKEe6lWpeIxLaWbw"/>
-  <Codegen:External xmi:id="_uKesIKJKEe6lWpeIxLaWbw" name="Reserva" base_Classifier="_uKbo0aJKEe6lWpeIxLaWbw"/>
-  <Codegen:External xmi:id="_7I3YsKJLEe6lWpeIxLaWbw" name="org.iesalandalus.programacion.reservashotel.controlador.Controlador" base_Classifier="_7I0VYKJLEe6lWpeIxLaWbw"/>
   <standard:Create xmi:id="_xsWUIKyBEe6i151LWJfCKQ" base_BehavioralFeature="_xsCLEKyBEe6i151LWJfCKQ"/>
   <standard:Create xmi:id="_SPq6sK1ZEe6tTZMC2RIPBQ" base_BehavioralFeature="_SPMZkK1ZEe6tTZMC2RIPBQ"/>
-  <Codegen:External xmi:id="_OtdGQK1bEe6tTZMC2RIPBQ" name="org.iesalandalus.programacion.reservashotel.modelo.negocio.Reservas" base_Classifier="_SOOJMK1ZEe6tTZMC2RIPBQ"/>
   <standard:Create xmi:id="_OtmQMK1bEe6tTZMC2RIPBQ" base_BehavioralFeature="_Otfiga1bEe6tTZMC2RIPBQ"/>
-  <Codegen:External xmi:id="_LJXNEK1eEe6tTZMC2RIPBQ" name="org.iesalandalus.programacion.reservashotel.modelo.Modelo" base_Classifier="_OtSHIK1bEe6tTZMC2RIPBQ"/>
   <standard:Create xmi:id="_LJo54K1eEe6tTZMC2RIPBQ" base_BehavioralFeature="_LJizQK1eEe6tTZMC2RIPBQ"/>
-  <Codegen:External xmi:id="_6Kqu8K1rEe6tTZMC2RIPBQ" name="org.iesalandalus.programacion.reservashotel.controlador.Controlador" base_Classifier="_LJQfYK1eEe6tTZMC2RIPBQ"/>
   <standard:Create xmi:id="_eUTvQK1vEe6tTZMC2RIPBQ" base_BehavioralFeature="_eUPd0K1vEe6tTZMC2RIPBQ"/>
   <standard:Create xmi:id="_vuZVoK1xEe6tTZMC2RIPBQ" base_BehavioralFeature="_vuVrQK1xEe6tTZMC2RIPBQ"/>
-  <Codegen:External xmi:id="_vugqYK1xEe6tTZMC2RIPBQ" name="Opcion" base_Classifier="_eUBbYK1vEe6tTZMC2RIPBQ"/>
 </xmi:XMI>
