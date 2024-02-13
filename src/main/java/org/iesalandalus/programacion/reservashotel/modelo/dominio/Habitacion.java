@@ -27,7 +27,7 @@ public class Habitacion {
         setPuerta(puerta);
         setPrecio(precio);
         setTipoHabitacion(tipoHabitacion=TipoHabitacion.SIMPLE);
-        setIdentificador(identificador);
+        setIdentificador();
         //this.identificador=identificador(planta,puerta);
 
     }
@@ -37,7 +37,7 @@ public class Habitacion {
         setPuerta(puerta);
         setPrecio(precio);
         setTipoHabitacion(tipoHabitacion);
-        setIdentificador(identificador);
+        setIdentificador();
         //this.identificador=identificador(planta,puerta);
 
     }
@@ -85,9 +85,8 @@ public class Habitacion {
     //Setter -
 //TODO ESTO LO HE CAMBIADO, ANTES ERA =NULL, LANZA UNA EXCEPCION
     private void setIdentificador() {
-        identificador=planta+""+puerta;
 
-        this.identificador= identificador;
+        this.identificador=planta+""+puerta;
     }
 
 
@@ -96,6 +95,8 @@ public class Habitacion {
             throw new NullPointerException("Error, el identificador no puede ser nulo");
         if(identificador.isBlank())
             throw new IllegalArgumentException("Error el identificador no puede estar en blanco");
+
+        this.identificador = identificador;
 
     }
 

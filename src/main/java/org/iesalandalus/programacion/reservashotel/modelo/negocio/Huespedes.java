@@ -61,17 +61,18 @@ public class Huespedes {
 
 //Método para buscar un huésped
     public Huesped buscar(Huesped huesped) {
-        if (huesped == null) {
-            throw new NullPointerException("Error, el huesped no puede ser nulo.");
-        }
 
-        for(Huesped huesped1:coleccionHuespedes){
-            if(coleccionHuespedes.contains(huesped)){
-                return huesped1;
-            }
-        }
-        return null;
+        if (huesped == null)
+            throw new NullPointerException("ERROR: No se puede buscar un huésped nulo.");
+
+        if (coleccionHuespedes.contains(huesped))
+            return coleccionHuespedes.get(coleccionHuespedes.indexOf(huesped));
+        else
+            return null;
+
+
     }
+
 
 //Método para borrar un Huésped
     public void borrar(Huesped huesped) throws OperationNotSupportedException{
@@ -91,5 +92,7 @@ public class Huespedes {
 
 
 }
+
+
 
 

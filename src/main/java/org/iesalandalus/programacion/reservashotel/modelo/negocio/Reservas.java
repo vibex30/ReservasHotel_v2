@@ -11,12 +11,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 
 public class Reservas {
-    private int capacidad;
-    private int tamano;
     private List<Reserva> coleccionReservas;
 
     // Constructor
@@ -42,7 +41,7 @@ public class Reservas {
 
     // Método para obtener el tamaño actual de la lista
     public int getTamano() {
-        return tamano;
+        return coleccionReservas.size();
     }
 
 
@@ -55,10 +54,7 @@ public class Reservas {
         if(coleccionReservas.contains(reserva)){
             throw new OperationNotSupportedException("ERROR: Ya existe una reserva igual.");
         }
-        //TODO NO ESTOY SEGURA DE QUE AQUI TENGA SENTIDO EL TAMAÑO
-        if(coleccionReservas.size()>=tamano){
-            throw new IllegalArgumentException("Error se ha superador el tamaño permitido");
-        }
+
         coleccionReservas.add(new Reserva(reserva));
     }
 
@@ -111,11 +107,14 @@ public class Reservas {
 
 //Devolverá una colección de reservas realizadas para el tipo de habitación indicada en el parámetro
     public List<Reserva> getReservas(TipoHabitacion tipoHabitacion) {
+        if (tipoHabitacion == null)
+            throw new NullPointerException("ERROR: No se pueden buscar reservas de un tipo de habitación nula.");
         List <Reserva> reservaTipoHab= new ArrayList<>();
 
         for(Reserva reserva:coleccionReservas){
-            if(reserva.equals(tipoHabitacion)){
-                return coleccionReservas;
+            if(reserva.getHabitacion().getTipoHabitacion().equals(tipoHabitacion)){
+                reservaTipoHab.add(reserva);
+                return reservaTipoHab;
             }
         }
         return null;
@@ -126,7 +125,10 @@ public class Reservas {
 
     public List<Reserva> getReservasFuturas(Habitacion habitacion) {
         List <Reserva> reservasFuturasHabitacion= new ArrayList<>();
+        //TODO//Iterator<Reserva> it = nombreLista.iterator();
 
+        //nombreLista.sort(Comparator.comparing(ClaseQueComparas::métodoConElQueLoHaces).reversed());
+        //Collection.sort(ElQué, Comparator.comparing(Clase::método))
         for (Reserva reserva:coleccionReservas) {
             // Verifica si la reserva pertenece a la habitación específica y si la fecha de inicio es posterior a la fecha actual
             if (reserva.getHabitacion().equals(habitacion) && reserva.getFechaInicioReserva().isAfter(LocalDate.now())){
