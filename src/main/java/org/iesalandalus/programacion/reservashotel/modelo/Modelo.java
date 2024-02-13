@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 public class Modelo {
 
-    private static final int CAPACIDAD=5;
+
     private Habitaciones habitaciones;
     private Reservas reservas;
     private Huespedes huespedes;

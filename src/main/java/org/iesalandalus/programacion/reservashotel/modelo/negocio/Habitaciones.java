@@ -20,6 +20,7 @@ public class Habitaciones {
     }
 
 
+
     public List<Habitacion> get(TipoHabitacion tipoHabitacion) {
         if (coleccionHabitaciones == null)
             throw new NullPointerException("Error, la lista no puede ser nula");
