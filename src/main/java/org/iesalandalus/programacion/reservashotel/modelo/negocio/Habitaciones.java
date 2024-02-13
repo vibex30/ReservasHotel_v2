@@ -10,6 +10,7 @@ import java.util.List;
 
 public class Habitaciones {
     private int capacidad;
+    private int tamano;
     private List<Habitacion> coleccionHabitaciones;
 
     // Constructor
@@ -98,6 +99,10 @@ public class Habitaciones {
 
 
     }
+    public int getTamano() {
+        return tamano;
+    }
+
 
 
 

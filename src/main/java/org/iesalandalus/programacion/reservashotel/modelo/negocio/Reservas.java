@@ -9,33 +9,36 @@ import javax.naming.OperationNotSupportedException;
 import java.time.LocalDate;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Reservas {
     private int capacidad;
     private int tamano;
-    private Reserva[] coleccionReservas;
+    private List<Reserva> coleccionReservas;
 
     // Constructor
     public Reservas(int capacidad) {
         this.capacidad = capacidad;
         this.tamano = 0;
-        this.coleccionReservas = new Reserva[capacidad];
+        this.coleccionReservas = new ArrayList<>(capacidad);
     }
 
     // Método para obtener la lista de reservas
-    public Reserva[] get() {
+    public List<Reserva> get() {
         return copiaProfundaReservas();
     }
 
     // Método para realizar una copia profunda de la lista de reservas
-    private Reserva[] copiaProfundaReservas() {
-        Reserva[] copia = new Reserva[capacidad];
-        for (int i = 0; i < tamano; i++) {
-            copia[i] = coleccionReservas[i];
+    private List<Reserva> copiaProfundaReservas() {
+        List<Reserva> copiaProfunda = new ArrayList<>();
+        for (Reserva reserva : coleccionReservas) {
+            copiaProfunda.add(new Reserva(reserva));
         }
-        return copia;
+
+        return copiaProfunda;
     }
 
     // Método para obtener el tamaño actual de la lista
@@ -43,116 +46,92 @@ public class Reservas {
         return tamano;
     }
 
-    // Método para obtener la capacidad de la lista
-    public int getCapacidad() {
-        return capacidad;
-    }
+
 
     // Método para insertar una reserva
     public void insertar(Reserva reserva) throws OperationNotSupportedException {
         if(reserva==null)
             throw new NullPointerException("Error, la reserva no puede ser nula");
 
-
-        int indice= buscarIndice(reserva);
-
-
-        if (tamanoSuperado(tamano)) {
-            throw new IllegalStateException("ERROR: Se ha superado el tamaño permitido.");
-        } else if (indice>=0)
-            throw new OperationNotSupportedException("Error, la reserva ya esta registrada");
-        else
-            coleccionReservas[tamano] = new Reserva(reserva);
-        tamano++;
-    }
-
-    // Método para buscar el índice de una reserva
-    private int buscarIndice(Reserva reserva) {
-        if (reserva == null)
-            throw new NullPointerException("ERROR: El índice de la  reserva no puede ser nulo.");
-        for (int i = 0; i < tamano; i++) {
-            if (coleccionReservas[i].equals(reserva)) {
-                return i;
-            }
+        if(coleccionReservas.contains(reserva)){
+            throw new OperationNotSupportedException("Error, la reserva ya está hecha");
         }
-        return -1;
+        //TODO NO ESTOY SEGURA DE QUE AQUI TENGA SENTIDO EL TAMAÑO
+        if(coleccionReservas.size()>=tamano){
+            throw new IllegalArgumentException("Error se ha superador el tamaño permitido");
+        }
+        coleccionReservas.add(new Reserva(reserva));
     }
 
-    // Método para verificar si el tamaño ha sido superado
-    private boolean tamanoSuperado(int indice) {
-        return indice >= capacidad;
-    }
-    private boolean capacidadSuperada(int indice) {
-        if (indice > capacidad)
-            return true;
-        return false;
-    }
+
     // Método para buscar una reserva
     public Reserva buscar(Reserva reserva) {
         if(reserva==null)
             throw new NullPointerException("no se puede borrar una reserva nula ");
 
-        int busqueda = buscarIndice(reserva);
-        if (busqueda == -1)
-            return null;
-        return coleccionReservas[busqueda];
+        for(Reserva i:coleccionReservas){
+            if(i.equals(reserva)){
+                return  i;
+            }
+        }
+        return null;
     }
 
     // Método para borrar una reserva
     public void borrar(Reserva reserva) throws OperationNotSupportedException{
-        if (reserva == null)
+        if (reserva == null) {
             throw new NullPointerException("ERROR: La reserva a buscar no puede ser nula.");
-        if (buscar(reserva) == null)
-            throw new IllegalArgumentException("ERROR: La reserva que se quiere borrar no existe.");
-        int indice = buscarIndice(reserva);
-        if (indice != -1) {
-            desplazarUnaPosicionHaciaIzquierda(indice);
-            tamano--;
         }
+        if (buscar(reserva) == null){
+            throw new OperationNotSupportedException("ERROR: La reserva que se quiere borrar no existe.");
+        }
+        coleccionReservas.remove(reserva);
+
     }
 
-    // Método para desplazar una posición hacia la izquierda
-    private void desplazarUnaPosicionHaciaIzquierda(int indice) {
-        for (int i = indice; i < tamano - 1; i++) {
-            coleccionReservas[i] = coleccionReservas[i + 1];
+
+
+//Devolverá una colección de reservas realizadas por el huésped pasado por parámetro
+//TODO REVISAR
+    public List<Reserva> getReservas(Huesped huesped) {
+        List<Reserva> DameLaReservaHuesped=new ArrayList<>();
+
+        for(Reserva reserva:coleccionReservas){
+            if(reserva.equals(huesped)){
+                return coleccionReservas;
+            }
+
         }
-        coleccionReservas[tamano-1]=null;
+        return null;
+
+
     }
 
-    public Reserva[] getReservas(Huesped huesped) {
-        Reserva[] reservasHuesped = new Reserva[this.tamano];
-        int j = 0;
-        for (int i = 0; i < this.tamano; i++) {
-            if (this.coleccionReservas[i].getHuesped().equals(huesped)) {
-                reservasHuesped[j] = this.coleccionReservas[i];
-                j++;
+
+
+//Devolverá una colección de reservas realizadas para el tipo de habitación indicada en el parámetro
+    public List<Reserva> getReservas(TipoHabitacion tipoHabitacion) {
+        List <Reserva> reservaTipoHab= new ArrayList<>();
+
+        for(Reserva reserva:coleccionReservas){
+            if(reserva.equals(tipoHabitacion)){
+                return coleccionReservas;
             }
         }
-        return reservasHuesped;
+        return null;
     }
 
-    public Reserva[] getReservas(TipoHabitacion tipoHabitacion) {
-        Reserva[] reservasTipoHabitacion = new Reserva[this.tamano];
-        int j = 0;
-        for (int i = 0; i < this.tamano; i++) {
-            if (this.coleccionReservas[i].getHabitacion().getTipoHabitacion().equals(tipoHabitacion)) {
-                reservasTipoHabitacion[j] = this.coleccionReservas[i];
-                j++;
-            }
-        }
-        return reservasTipoHabitacion;
+    //Devolverá una colección de las reservas realizadas para la habitación indicada como parámetro y que sean
+    //posteriores a la fecha de hoy
 
-    }
+    public List<Reserva> getReservasFuturas(Habitacion habitacion) {
+        List <Reserva> reservasFuturasHabitacion= new ArrayList<>();
 
+        for (Reserva reserva:coleccionReservas) {
+            // Verifica si la reserva pertenece a la habitación específica y si la fecha de inicio es posterior a la fecha actual
+            if (reserva.getHabitacion().equals(habitacion) && reserva.getFechaInicioReserva().isAfter(LocalDate.now())){
+                reservasFuturasHabitacion.add(reserva);
 
-    public Reserva[] getReservasFuturas(Habitacion habitacion) {
-        Reserva[] reservasFuturasHabitacion = new Reserva[this.tamano];
-        int j = 0;
-        for (int i = 0; i < this.tamano; i++) {
-            //verifico si la reserva pertenece a la habitación específicada y si la fecha de inicio de la reserva es posterior a la fecha actual
-            if (this.coleccionReservas[i].getHabitacion().equals(habitacion) && this.coleccionReservas[i].getFechaInicioReserva().isAfter(LocalDate.now())) {
-                reservasFuturasHabitacion[j] = this.coleccionReservas[i];
-                j++;
             }
         }
         return reservasFuturasHabitacion;
