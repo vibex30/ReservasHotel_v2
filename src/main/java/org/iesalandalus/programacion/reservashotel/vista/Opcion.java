@@ -18,7 +18,7 @@ public enum Opcion {
     REALIZAR_CHECKIN("Realizar check in"),
     REALIZAR_CHECKOUT("Realizar check out");
 
-
+//
 
 
     private String mensajeAmostrar;
