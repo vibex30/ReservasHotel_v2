@@ -9,6 +9,7 @@ import org.iesalandalus.programacion.reservashotel.vista.Vista;
 
 import javax.naming.OperationNotSupportedException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Controlador {
 
@@ -64,7 +65,7 @@ public class Controlador {
     }
 
 
-    public Huesped [] getHuespedes(){
+    public List<Huesped> getHuespedes(){
         return modelo.getHuespedes();
     }
 
@@ -82,12 +83,12 @@ public class Controlador {
 
     }
 
-    public Habitacion [] getHabitaciones (){
+    public List<Habitacion> getHabitaciones (){
         return modelo.getHabitaciones();
     }
 
 
-    public Habitacion [] getHabitaciones(TipoHabitacion tipoHabitacion){
+    public List<Habitacion> getHabitaciones(TipoHabitacion tipoHabitacion){
         return modelo.getHabitaciones();
     }
 
@@ -104,21 +105,21 @@ public class Controlador {
         return modelo.buscar(reserva);
     }
 
-    public Reserva[] getReserva(){
+    public List<Reserva> getReservas(){
         return modelo.getReserva();
     }
 
 
-    public Reserva[] getReserva(Huesped huesped){
+    public List<Reserva> getReservas(Huesped huesped){
         return modelo.getReserva(huesped);
     }
 
 
-    public Reserva[] getReserva(TipoHabitacion tipoHabitacion){
+    public List <Reserva> getReservas(TipoHabitacion tipoHabitacion){
         return modelo.getReserva(tipoHabitacion);
     }
 
-    public Reserva[] getReserva(Habitacion habitacion){
+    public List<Reserva> getReservas(Habitacion habitacion){
         return modelo.getReserva(habitacion);
     }
 

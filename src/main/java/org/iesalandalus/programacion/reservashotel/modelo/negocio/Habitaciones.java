@@ -9,14 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Habitaciones {
-    private int capacidad;
-    private int tamano;
+
     private List<Habitacion> coleccionHabitaciones;
 
     // Constructor
-    public Habitaciones(int capacidad) {
-        this.capacidad = capacidad;
-        this.coleccionHabitaciones = new ArrayList<>(capacidad);
+    public Habitaciones() {
+
+        this.coleccionHabitaciones = new ArrayList<>();
     }
 
 
@@ -58,13 +57,11 @@ public class Habitaciones {
     // Método para insertar una habitacion
     public void insertar(Habitacion habitacion) throws OperationNotSupportedException{
         if(habitacion==null) {
-            throw new NullPointerException("Error, la habitacion no puede ser nula");
+            throw new NullPointerException("ERROR: No se puede insertar una habitación nula.");
         }
-        if (coleccionHabitaciones.size()>=capacidad) {
-            throw new IllegalStateException("ERROR: Se ha superado el tamaño permitido.");
-        }
+
         if(coleccionHabitaciones.contains(habitacion)){
-            throw new OperationNotSupportedException("Error, esta habitación ya está registrada");
+            throw new OperationNotSupportedException("ERROR: Ya existe una habitación con ese identificador.");
         }
         coleccionHabitaciones.add(new Habitacion(habitacion));
     }
@@ -74,7 +71,7 @@ public class Habitaciones {
     // Método para buscar una habitacion
     public Habitacion buscar(Habitacion habitacion) {
         if (habitacion == null)
-            throw new NullPointerException("Error, introduce un valor correcto");
+            throw new NullPointerException("ERROR: No se puede buscar una habitación nula.");
 
         for(Habitacion i:coleccionHabitaciones){
             if(i.equals(habitacion)){
@@ -90,10 +87,10 @@ public class Habitaciones {
     // Método para borrar una habitacion
     public void borrar(Habitacion habitacion) throws OperationNotSupportedException {
         if(habitacion==null)
-            throw new NullPointerException("Error, no puede ser nulo");
+            throw new NullPointerException("ERROR: No se puede borrar una habitación nula.");
 
         if(!coleccionHabitaciones.contains(habitacion)){
-            throw new OperationNotSupportedException("Error, la habitación no se puede borrar porque no existe");
+            throw new OperationNotSupportedException("ERROR: No existe ninguna habitación como la indicada.");
         }
 
         coleccionHabitaciones.remove(habitacion);
@@ -101,7 +98,7 @@ public class Habitaciones {
 
     }
     public int getTamano() {
-        return tamano;
+        return this.coleccionHabitaciones.size();
     }
 
 

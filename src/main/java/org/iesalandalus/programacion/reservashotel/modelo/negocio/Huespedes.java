@@ -10,23 +10,16 @@ import java.util.List;
 
 public class Huespedes {
 
-    private int capacidad;
-    private int tamano;
     private List<Huesped> coleccionHuespedes;
-
-
-
 
 
 
 // Constructor
 
 
-    public Huespedes(int capacidad) {
-        if (capacidad<=0)
-            throw new IllegalArgumentException("ERROR: La capacidad debe ser mayor que cero.");
-        this.capacidad = capacidad;
-        this.coleccionHuespedes = new ArrayList<>(capacidad);
+    public Huespedes() {
+
+        this.coleccionHuespedes = new ArrayList<>();
     }
 
 
@@ -47,7 +40,7 @@ public class Huespedes {
 
 
     public int getTamano() {
-            return tamano;
+            return this.coleccionHuespedes.size();
         }
 
 
@@ -56,13 +49,10 @@ public class Huespedes {
 
     public void insertar(Huesped huesped) throws OperationNotSupportedException{
         if(huesped==null) {
-            throw new NullPointerException("Error, el huesped no puede ser nulo");
-        }
-        if (coleccionHuespedes.size()>=capacidad) {
-            throw new IllegalStateException("ERROR: Se ha superado el tamaño permitido.");
+            throw new NullPointerException("ERROR: No se puede insertar un huésped nulo.");
         }
         if(coleccionHuespedes.contains(huesped)){
-            throw new OperationNotSupportedException("Error, el huesped ya está registrado");
+            throw new OperationNotSupportedException("ERROR: Ya existe un huésped con ese dni.");
         }
         coleccionHuespedes.add(new Huesped(huesped));
 
@@ -90,7 +80,7 @@ public class Huespedes {
         }
 
         if(!coleccionHuespedes.contains(huesped)) {
-            throw new OperationNotSupportedException("Error, el huésped no se puede borrar porque no existe");
+            throw new OperationNotSupportedException("ERROR: No existe ningún huésped como el indicado.");
         }
 
         coleccionHuespedes.remove(huesped);

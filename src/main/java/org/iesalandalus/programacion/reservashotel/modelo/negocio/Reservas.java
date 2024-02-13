@@ -20,10 +20,9 @@ public class Reservas {
     private List<Reserva> coleccionReservas;
 
     // Constructor
-    public Reservas(int capacidad) {
-        this.capacidad = capacidad;
-        this.tamano = 0;
-        this.coleccionReservas = new ArrayList<>(capacidad);
+    public Reservas() {
+
+        this.coleccionReservas = new ArrayList<>();
     }
 
     // Método para obtener la lista de reservas
@@ -51,10 +50,10 @@ public class Reservas {
     // Método para insertar una reserva
     public void insertar(Reserva reserva) throws OperationNotSupportedException {
         if(reserva==null)
-            throw new NullPointerException("Error, la reserva no puede ser nula");
+            throw new NullPointerException("ERROR: No se puede insertar una reserva nula.");
 
         if(coleccionReservas.contains(reserva)){
-            throw new OperationNotSupportedException("Error, la reserva ya está hecha");
+            throw new OperationNotSupportedException("ERROR: Ya existe una reserva igual.");
         }
         //TODO NO ESTOY SEGURA DE QUE AQUI TENGA SENTIDO EL TAMAÑO
         if(coleccionReservas.size()>=tamano){
@@ -67,7 +66,7 @@ public class Reservas {
     // Método para buscar una reserva
     public Reserva buscar(Reserva reserva) {
         if(reserva==null)
-            throw new NullPointerException("no se puede borrar una reserva nula ");
+            throw new NullPointerException("ERROR: No se puede buscar una reserva nula.");
 
         for(Reserva i:coleccionReservas){
             if(i.equals(reserva)){
@@ -80,10 +79,10 @@ public class Reservas {
     // Método para borrar una reserva
     public void borrar(Reserva reserva) throws OperationNotSupportedException{
         if (reserva == null) {
-            throw new NullPointerException("ERROR: La reserva a buscar no puede ser nula.");
+            throw new NullPointerException("ERROR: No se puede borrar una reserva nula.");
         }
         if (buscar(reserva) == null){
-            throw new OperationNotSupportedException("ERROR: La reserva que se quiere borrar no existe.");
+            throw new OperationNotSupportedException("ERROR: No existe ninguna reserva como la indicada.");
         }
         coleccionReservas.remove(reserva);
 
@@ -97,8 +96,9 @@ public class Reservas {
         List<Reserva> DameLaReservaHuesped=new ArrayList<>();
 
         for(Reserva reserva:coleccionReservas){
-            if(reserva.equals(huesped)){
-                return coleccionReservas;
+            if(reserva.getHuesped().equals(huesped)){
+                DameLaReservaHuesped.add(reserva);
+                return DameLaReservaHuesped;
             }
 
         }
@@ -131,10 +131,11 @@ public class Reservas {
             // Verifica si la reserva pertenece a la habitación específica y si la fecha de inicio es posterior a la fecha actual
             if (reserva.getHabitacion().equals(habitacion) && reserva.getFechaInicioReserva().isAfter(LocalDate.now())){
                 reservasFuturasHabitacion.add(reserva);
+                return reservasFuturasHabitacion;
 
             }
         }
-        return reservasFuturasHabitacion;
+        return null;
     }
 
     public void realizarCheckIn(Reserva reserva, LocalDateTime fecha){
