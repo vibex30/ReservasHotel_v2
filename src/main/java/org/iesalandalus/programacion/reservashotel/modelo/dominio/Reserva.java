@@ -11,7 +11,7 @@ public class Reserva {
 
     private final int MAX_HORAS_POSTERIOR_CHECKOUT=12;
     public static final String FORMATO_FECHA_RESERVA="dd/MM/yyyy";
-    //TODO : NO SE PORQUE ME PIDE ESTA VARIABLE(LA DE ABAJO) QUE NO SALE EN EL DIAGRAMA DE CLASES.
+
     public static final String FORMATO_FECHA_HORA_RESERVA="dd/MM/yyyy hh:mm";
     private Huesped huesped;
     private Habitacion habitacion;
@@ -43,8 +43,6 @@ public class Reserva {
         setRegimen(regimen);
         setFechaInicioReserva(fechaInicioReserva);
         setFechaFinReserva(fechaFinReserva);
-        //this.checkIn=LocalDateTime;
-        //this.checkOut=this.checkIn.plusHours(MAX_HORAS_POSTERIOR_CHECKOUT);
         setNumeroPersonas(numeroPersonas);
 
 

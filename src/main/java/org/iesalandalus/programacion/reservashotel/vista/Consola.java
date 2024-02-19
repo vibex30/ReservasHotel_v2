@@ -5,7 +5,9 @@ import org.iesalandalus.programacion.reservashotel.modelo.dominio.*;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Iterator;
 
 public class Consola {
     private Consola() {
@@ -83,14 +85,14 @@ public class Consola {
         return formateada;
     }
 
-    public static LocalDate leerFechaHora(String mensaje){
+    public static LocalDateTime leerFechaHora(String mensaje){
         DateTimeFormatter formatoFechaHora= DateTimeFormatter.ofPattern(Reserva.FORMATO_FECHA_HORA_RESERVA);
         while(!mensaje.matches("[0-3][0-9]/[01][0-9]/[0-9]{4} [ ] [0-2][0-9]-[0-5][0-9]-[0-5][0-9]")){
             System.out.println("Introduzca fecha hora correcta");
             mensaje=Entrada.cadena();
 
         }
-        LocalDate formateada= LocalDate.parse(mensaje, formatoFechaHora);
+        LocalDateTime formateada= LocalDateTime.parse(mensaje, formatoFechaHora);
 
         return formateada;
     }

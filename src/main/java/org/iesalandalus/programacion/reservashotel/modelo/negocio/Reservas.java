@@ -32,9 +32,19 @@ public class Reservas {
     // Método para realizar una copia profunda de la lista de reservas
     private List<Reserva> copiaProfundaReservas() {
         List<Reserva> copiaProfunda = new ArrayList<>();
+
+        Iterator<Reserva> iterator= coleccionReservas.iterator();
+
+        while(iterator.hasNext()){
+            Reserva reserva=iterator.next();
+            copiaProfunda.add(new Reserva(reserva));
+
+        }
+
+        /*
         for (Reserva reserva : coleccionReservas) {
             copiaProfunda.add(new Reserva(reserva));
-        }
+        }*/
 
         return copiaProfunda;
     }
@@ -64,11 +74,21 @@ public class Reservas {
         if(reserva==null)
             throw new NullPointerException("ERROR: No se puede buscar una reserva nula.");
 
-        for(Reserva i:coleccionReservas){
+
+        Iterator<Reserva> iterator=coleccionReservas.iterator();
+        while(iterator.hasNext()){
+            Reserva i=iterator.next();
             if(i.equals(reserva)){
                 return  i;
             }
         }
+
+
+        /*for(Reserva i:coleccionReservas){
+            if(i.equals(reserva)){
+                return  i;
+            }
+        }*/
         return null;
     }
 
@@ -87,19 +107,30 @@ public class Reservas {
 
 
 //Devolverá una colección de reservas realizadas por el huésped pasado por parámetro
-//TODO REVISAR
-    public List<Reserva> getReservas(Huesped huesped) {
-        List<Reserva> DameLaReservaHuesped=new ArrayList<>();
 
-        for(Reserva reserva:coleccionReservas){
+    public List<Reserva> getReservas(Huesped huesped) {
+        List<Reserva> dameLaReservaHuesped=new ArrayList<>();
+
+        Iterator<Reserva> iterator=coleccionReservas.iterator();
+
+        while (iterator.hasNext()){
+            Reserva reserva= iterator.next();
+            if(reserva.getHuesped().equals(huesped))
+                dameLaReservaHuesped.add(reserva);
+        }
+
+        /*for(Reserva reserva:coleccionReservas){
             if(reserva.getHuesped().equals(huesped)){
                 DameLaReservaHuesped.add(reserva);
                 return DameLaReservaHuesped;
             }
 
+        }*/
+        if(dameLaReservaHuesped.isEmpty()){
+            return null;
+        }else {
+            return dameLaReservaHuesped;
         }
-        return null;
-
 
     }
 
@@ -111,11 +142,22 @@ public class Reservas {
             throw new NullPointerException("ERROR: No se pueden buscar reservas de un tipo de habitación nula.");
         List <Reserva> reservaTipoHab= new ArrayList<>();
 
+        Iterator<Reserva> iterator= coleccionReservas.iterator();
+
+        while(iterator.hasNext()) {
+            Reserva reserva = iterator.next();
+            if (reserva.getHabitacion().getTipoHabitacion().equals(tipoHabitacion)) {
+                reservaTipoHab.add(reserva);
+                return reservaTipoHab;
+            }
+            //He dejado los bucles for porque primero lo hice así (no sabía que habia que utilizar iteradores)
+        /*
         for(Reserva reserva:coleccionReservas){
             if(reserva.getHabitacion().getTipoHabitacion().equals(tipoHabitacion)){
                 reservaTipoHab.add(reserva);
                 return reservaTipoHab;
             }
+        }*/
         }
         return null;
     }
@@ -125,18 +167,26 @@ public class Reservas {
 
     public List<Reserva> getReservasFuturas(Habitacion habitacion) {
         List <Reserva> reservasFuturasHabitacion= new ArrayList<>();
-        //TODO//Iterator<Reserva> it = nombreLista.iterator();
 
+        Iterator<Reserva> iterator=coleccionReservas.iterator();
+
+        while(iterator.hasNext()){
+            Reserva reserva=iterator.next();
+            if (reserva.getHabitacion().equals(habitacion) && reserva.getFechaInicioReserva().isAfter(LocalDate.now())) {
+                reservasFuturasHabitacion.add(reserva);
+                return reservasFuturasHabitacion;
+            }
+        }
         //nombreLista.sort(Comparator.comparing(ClaseQueComparas::métodoConElQueLoHaces).reversed());
         //Collection.sort(ElQué, Comparator.comparing(Clase::método))
-        for (Reserva reserva:coleccionReservas) {
+        /*for (Reserva reserva:coleccionReservas) {
             // Verifica si la reserva pertenece a la habitación específica y si la fecha de inicio es posterior a la fecha actual
             if (reserva.getHabitacion().equals(habitacion) && reserva.getFechaInicioReserva().isAfter(LocalDate.now())){
                 reservasFuturasHabitacion.add(reserva);
                 return reservasFuturasHabitacion;
 
             }
-        }
+        }*/
         return null;
     }
 
@@ -158,10 +208,11 @@ public class Reservas {
         if(reserva==null)
             throw new NullPointerException("check out nulo");
         if(fecha==null)
-            throw new NullPointerException("Fecha nula111111");
+            throw new NullPointerException("Fecha nula");
         if(fecha.isAfter(reserva.getFechaInicioReserva().atStartOfDay()) || fecha.isBefore(reserva.getFechaFinReserva().atStartOfDay()))
             throw new IllegalArgumentException("La fecha de inicio  de reserva no puede ser posterior al check in");
-
+        if(reserva.getCheckIn()!=null)
+            throw new NullPointerException("Error con el checkIn");
         reserva.setCheckOut(fecha);
     }
 

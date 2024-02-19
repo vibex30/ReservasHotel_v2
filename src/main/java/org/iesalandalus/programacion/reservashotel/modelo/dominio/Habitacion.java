@@ -20,15 +20,15 @@ public class Habitacion {
     private TipoHabitacion tipoHabitacion;
 
 
-    //Constructores
+
     //Constructor con parámetros
     public Habitacion(int planta, int puerta, double precio){
         setPlanta(planta);
         setPuerta(puerta);
         setPrecio(precio);
-        setTipoHabitacion(tipoHabitacion=TipoHabitacion.SIMPLE);
+        setTipoHabitacion(TipoHabitacion.SIMPLE);
         setIdentificador();
-        //this.identificador=identificador(planta,puerta);
+
 
     }
 
@@ -38,7 +38,7 @@ public class Habitacion {
         setPrecio(precio);
         setTipoHabitacion(tipoHabitacion);
         setIdentificador();
-        //this.identificador=identificador(planta,puerta);
+
 
     }
 
@@ -83,7 +83,7 @@ public class Habitacion {
 
 
     //Setter -
-//TODO ESTO LO HE CAMBIADO, ANTES ERA =NULL, LANZA UNA EXCEPCION
+
     private void setIdentificador() {
 
         this.identificador=planta+""+puerta;

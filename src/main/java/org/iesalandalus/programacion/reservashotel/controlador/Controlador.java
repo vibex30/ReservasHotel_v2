@@ -24,15 +24,9 @@ public class Controlador {
 
         this.modelo=modelo;
         this.vista=vista;
-
-
-        //this.controlador=controlador;
-
-        //setControlador(new Controlador());
-
+        vista.setControlador(this);
 
     }
-
 
     public void comenzar(){
         vista.comenzar();

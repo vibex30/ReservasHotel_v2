@@ -6,6 +6,7 @@ import org.iesalandalus.programacion.reservashotel.modelo.dominio.TipoHabitacion
 
 import javax.naming.OperationNotSupportedException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Habitaciones {
@@ -26,15 +27,20 @@ public class Habitaciones {
 
         List<Habitacion> lista= new ArrayList<>();
 
+        Iterator<Habitacion> iterator=coleccionHabitaciones.iterator();
+
+        while(iterator.hasNext()){
+            Habitacion habitacion= iterator.next();
+            lista.add(new Habitacion(habitacion));
+
+        }
+        /*
         for (Habitacion habitacion : coleccionHabitaciones)
             if (habitacion.getTipoHabitacion() == tipoHabitacion) {
                 lista.add(new Habitacion(habitacion));
 
-            }
-
+            }*/
         return lista;
-
-
     }
 
 
@@ -46,10 +52,18 @@ public class Habitaciones {
     // Método para realizar una copia profunda de la lista de habitaciones
     private List<Habitacion> copiaProfundaHabitaciones() {
         List<Habitacion> copiaProfunda = new ArrayList<>();
+
+        Iterator<Habitacion> iterador= coleccionHabitaciones.iterator();
+
+        while (iterador.hasNext()) {
+            Habitacion habitacion = iterador.next();
+            copiaProfunda.add(new Habitacion(habitacion));
+        }
+        /*
         for(Habitacion habitacion:coleccionHabitaciones){
             copiaProfunda.add(new Habitacion(habitacion));
 
-        }
+        }*/
         return copiaProfunda;
     }
 
@@ -73,11 +87,19 @@ public class Habitaciones {
         if (habitacion == null)
             throw new NullPointerException("ERROR: No se puede buscar una habitación nula.");
 
-        for(Habitacion i:coleccionHabitaciones){
+        Iterator<Habitacion> iterator= coleccionHabitaciones.iterator();
+        while (iterator.hasNext()){
+            Habitacion i=iterator.next();
             if(i.equals(habitacion)){
                 return i;
             }
         }
+
+        /*for(Habitacion i:coleccionHabitaciones){
+            if(i.equals(habitacion)){
+                return i;
+            }
+        }*/
 
         return null;
 

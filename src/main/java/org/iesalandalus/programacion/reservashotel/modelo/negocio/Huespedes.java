@@ -5,23 +5,17 @@ import org.iesalandalus.programacion.reservashotel.modelo.dominio.Huesped;
 
 import javax.lang.model.util.AbstractElementVisitor7;
 import javax.naming.OperationNotSupportedException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Huespedes {
 
     private List<Huesped> coleccionHuespedes;
 
 
-
-// Constructor
-
-
     public Huespedes() {
 
         this.coleccionHuespedes = new ArrayList<>();
     }
-
 
     public List<Huesped> get() {
         return copiaProfundaHuespedes();
@@ -32,9 +26,12 @@ public class Huespedes {
 //Método para realizar una copia profunda de los Huéspedes
     private List<Huesped> copiaProfundaHuespedes() {
         List<Huesped> copiaProfundaHuesped= new ArrayList<>();
-        for(Huesped huesped:coleccionHuespedes){
+        Iterator<Huesped> iterator= coleccionHuespedes.iterator();
+        while (iterator.hasNext()){
+            Huesped huesped=iterator.next();
             copiaProfundaHuesped.add(new Huesped(huesped));
         }
+
         return copiaProfundaHuesped;
     }
 
@@ -64,9 +61,10 @@ public class Huespedes {
 
         if (huesped == null)
             throw new NullPointerException("ERROR: No se puede buscar un huésped nulo.");
-
+        Huesped copia=coleccionHuespedes.get(coleccionHuespedes.indexOf(huesped));
         if (coleccionHuespedes.contains(huesped))
-            return coleccionHuespedes.get(coleccionHuespedes.indexOf(huesped));
+
+            return new Huesped(copia);
         else
             return null;
 

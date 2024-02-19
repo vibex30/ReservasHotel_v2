@@ -1,5 +1,10 @@
 package org.iesalandalus.programacion.reservashotel.vista;
 
+import org.iesalandalus.programacion.reservashotel.modelo.negocio.Huespedes;
+
+import java.util.Collection;
+import java.util.Collections;
+
 public enum Opcion {
 
     SALIR("Salir"),
@@ -18,7 +23,7 @@ public enum Opcion {
     REALIZAR_CHECKIN("Realizar check in"),
     REALIZAR_CHECKOUT("Realizar check out");
 
-//
+
 
 
     private String mensajeAmostrar;

@@ -23,14 +23,12 @@ public class Modelo {
 
 
     public Modelo(){
-
-    }
-
-    public void comenzar(){
         habitaciones=new Habitaciones();
         reservas=new Reservas();
         huespedes=new Huespedes();
+    }
 
+    public void comenzar(){
 
     }
 
